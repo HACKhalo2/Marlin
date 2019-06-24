@@ -204,7 +204,11 @@ void GCodeQueue::enqueue_now_P(PGM_P const pgcode) {
   PGM_P p = pgcode;
   for (;;) {
     char c;
+<<<<<<< HEAD
     while ((c = pgm_read_byte(&p[i])) && c != '\n') {
+=======
+    while ((c = pgm_read_byte(&p[i])) && c != '\n') i++;
+>>>>>>> refs/remotes/MarlinFirmware/bugfix-2.0.x
     char cmd[i + 1];
     memcpy_P(cmd, p, i);
     cmd[i] = '\0';
